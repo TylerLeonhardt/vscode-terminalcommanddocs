@@ -4,10 +4,11 @@
 	"description": "Get docs/help on commands in your terminal by clicking on them!",
 	"publisher": "TylerLeonhardt",
 	"license": "MIT",
+	"icon": "logo.png",
 	"repository": {
 		"url": "https://github.com/TylerLeonhardt/vscode-terminalcommanddocs"
 	},
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"engines": {
 		"vscode": "^1.52.0"
 	},

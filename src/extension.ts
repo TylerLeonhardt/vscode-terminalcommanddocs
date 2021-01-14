@@ -1,5 +1,6 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
+import * as os from 'os';
 import * as vscode from 'vscode';
 import * as which from 'which';
 
@@ -54,12 +55,13 @@ function createTask(
 	const shellExec = new vscode.ShellExecution(`Get-Help -Online ${command}`,
 	{
 		executable: pwshExePath,
-		shellArgs: [ '-NoLogo','-NoProfile', '-NonInteractive','-Command' ]
+		shellArgs: [ '-NoLogo','-NoProfile', '-NonInteractive','-Command' ],
+		cwd: os.homedir()
 	});
 
 	const task = new vscode.Task(
 		{ type: 'get-help' },
-		vscode.TaskScope.Workspace,
+		vscode.TaskScope.Global,
 		'Get help online',
 		'Test HyperLink',
 		shellExec);
